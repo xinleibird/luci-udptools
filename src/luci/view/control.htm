@@ -11,21 +11,12 @@ local function get_udp_status(name)
 	return status
 end
 
-local udp2raw_status = get_udp_status("udp2raw")
 local udpspeeder_status = get_udp_status("udpspeeder")
 -%>
 
 <fieldset class="cbi-section">
 	<legend><%:Running Status%></legend>
 	<table width="100%" cellspacing="10" id="_udp2raw_status_table">
-		<tr>
-			<td width="33%"><%:Name%></td>
-			<td width="33%"><%:udp2raw%></td>
-		</tr>
-		<tr>
-			<td width="33%"><%:Running Status%></td>
-			<td><%=pcdata(udp2raw_status)%></td>
-		</tr>
 		<tr>
 			<td width="33%"><%:Name%></td>
 			<td width="33%"><%:udpspeeder%></td>
@@ -40,8 +31,8 @@ local udpspeeder_status = get_udp_status("udpspeeder")
 	<legend><%:Manage%></legend>
 	<table width="100%" cellspacing="10" >
 		<tr>
-			<td width="20%" align="right"><input type="button" class="cbi-button cbi-button-apply" value="<%:Restart%>" onclick="document.location='<%=luci.dispatcher.build_url("admin", "network", "udptools", "restart")%>'" /></td>
-			<td width="30%" align="left"><input type="button" class="cbi-button cbi-button-apply" value="<%:Stop%>" onclick="document.location='<%=luci.dispatcher.build_url("admin", "network", "udptools", "stop")%>'" /></td>
+			<td width="20%" align="right"><input type="button" class="cbi-button cbi-button-apply" value="<%:Restart%>" onclick="document.location='<%=luci.dispatcher.build_url("admin", "services", "udptools", "restart")%>'" /></td>
+			<td width="30%" align="left"><input type="button" class="cbi-button cbi-button-apply" value="<%:Stop%>" onclick="document.location='<%=luci.dispatcher.build_url("admin", "services", "udptools", "stop")%>'" /></td>
 		</tr>
 	</table>
 </fieldset>
